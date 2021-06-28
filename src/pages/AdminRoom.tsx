@@ -9,8 +9,9 @@ import answerImg from '../assets/images/answer.svg'
 import { Button } from '../components/Button'
 import { Question } from '../components/Question'
 import { RoomCode } from '../components/RoomCode'
-// import { useAuth } from '../hooks/useAuth'
 import { useRoom } from '../hooks/useRoom'
+import { ThemeSwitcher } from '../components/ThemeSwitcher'
+import { useTheme } from '../hooks/useTheme'
 
 import '../styles/room.scss'
 
@@ -19,10 +20,11 @@ type RoomParams = {
 }
 
 export function AdminRoom() {
-  // const { user } = useAuth()
   const history = useHistory()
   const params = useParams<RoomParams>()
   const roomId = params.id
+
+  const { theme } = useTheme()
 
   const { title, questions } = useRoom(roomId)
 
@@ -53,24 +55,25 @@ export function AdminRoom() {
   }
 
   return (
-    <div id="page-room">
+    <div id="page-room" className={theme}>
       <header>
         <div className="content">
           <img src={logoImg} alt="Letmeask" />
           <div>
             <RoomCode code={roomId} />
             <Button isOutlined onClick={handleEndRoom}>Encerrar sala</Button>
+            <ThemeSwitcher />
           </div>
         </div>
       </header>
 
       <main>
-        <div className="room-title">
+        <div className={`room-title ${theme}` } >
           <h1>Sala {title}</h1>
           {questions.length > 0 && <span>{questions.length} pergunta(s)</span>}
         </div>
 
-        <div className="question-list">
+        <div className={`question-list ${theme}` }>
           {questions.map(question => {
             return (
               <Question
@@ -103,7 +106,6 @@ export function AdminRoom() {
             )
           })}
         </div>
-
       </main>
     </div>
   )

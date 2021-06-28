@@ -1,4 +1,9 @@
 .button {
+  &.dark {
+    &.outlined {
+      background: #D2C3FE;
+    }
+  }
     height: 50px;
     border-radius: 8px;
     font-weight: 500;

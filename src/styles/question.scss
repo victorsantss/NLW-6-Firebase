@@ -4,6 +4,33 @@
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
   padding: 24px;
 
+  &.dark {
+    background: #D2C3FE;
+
+    &.highlighted {
+      background: #AE94FE;
+      border: 1px solid #D65BFC;
+      
+      footer .user-info span {
+        color: #000000
+      }
+    }
+
+    &.answered {
+      background: #C9B8FE;
+    }
+  
+    p {
+      color: #000000;
+    }
+
+    .user-info {
+      span {
+        color: #000000;
+      }
+    }
+  }
+
   & + .question {
     margin-top: 8px;
   }
