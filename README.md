@@ -2,6 +2,10 @@
 
 <p align="center">Projeto criado na NLW#06 da Rocketseat</p>
 
+<p align="center">
+  <img src="src/assets/demo/demo.gif" alt="animated" />
+</p>
+
 <h1 align="left">🎯 O projeto </h1>
 
 <p> O Letmeask trata-se de uma plataforma para enviar e responder perguntas em salas criadas pelo usuário! <br/>
